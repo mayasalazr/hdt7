@@ -1,0 +1,46 @@
+public class BinaryTree <E extends Comparable<E>>{
+    private Node <E> root;
+
+    public void insert(E data){
+        root = insertRec(root, data);
+
+    }
+
+    private Node<E> insertRec(Node<E> node, E data){
+        if (node == null) return new Node<>(data);
+        if (data.compareTo(node.data) < 0)
+            node.lefy = insertRec(node.left, data);
+        else
+            node.right = insertRec(node.right, data);
+        return node;
+    }
+
+    public E search(E data) {
+        return searchRec(root, data);
+    }
+
+    private E searchRec(Node<E> node, E data){
+        if (node ==  null) return null;
+        if (data,compareTo(node.data) == 0)
+            return node.data;
+        if(data.compareTo(node.data)<0)
+            return searchRec(node.left, data);
+        else
+            return searchRec(node.right, data);
+            
+
+    }
+
+    public void inOrder(){
+        inOrderRec(root);
+    }
+
+    private void inOrderRec(Node<E> node){
+        if (node !=null){
+            inOrderRec(node.left);
+            System.out.println(node.data);
+            inOrderRec(node.right);
+        }
+    }
+    
+}
