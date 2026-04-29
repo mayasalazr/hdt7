@@ -1,0 +1,7 @@
+is,es
+it,lo
+better,mejor
+(to,el
+(speak,hablar
+(or,o
+(die,morir

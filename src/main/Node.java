@@ -1,4 +1,4 @@
-public class Node {
+public class Node<E> {
     E data;
     Node<E> left, right;
 
